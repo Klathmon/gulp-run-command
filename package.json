@@ -6,6 +6,7 @@
   "scripts": {
     "pub": "np patch",
     "postversion": "npm run build",
+    "clean": "rimraf index.es5.js",
     "build": "babel index.js > index.es5.js"
   },
   "standard": {
