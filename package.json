@@ -1,7 +1,7 @@
 {
   "name": "gulp-run-command",
   "version": "0.0.2",
-  "description": "",
+  "description": "A simple way to run command-line programs from gulp in a cross-platform way.",
   "main": "index.es5.js",
   "scripts": {
     "pub": "np patch",
@@ -34,7 +34,7 @@
     "url": "git+https://github.com/Klathmon/gulp-run-command.git"
   },
   "author": "Gregory Benner <gregbenner1@gmail.com> (https://github.com/Klathmon)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Klathmon/gulp-run-command/issues"
   },
