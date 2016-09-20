@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "cross-spawn": "4.0.0",
-    "spawn-args": "0.2.0"
+    "spawn-args": "0.2.0",
+    "timeout-as-promise": "^1.0.0"
   }
 }
