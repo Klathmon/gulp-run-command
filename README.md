@@ -71,7 +71,7 @@ This object will be **added to** the normal environment, overwriting defaults wi
 **Why?**  
 I loved Gulp's dependency management and plugin ecosystem, but I hated having to use file streams or plugins which wrap my tools which are often out of date, buggy, or missing functionality. This plugin lets you define gulp tasks as command line commands which will be run. Most tools have a command line interface, so you are cutting out several unnecessary layers and giving yourself more flexibility.
 
-**What not just use [`gulp-shell`](https://github.com/sun-zheng-an/gulp-shell)?**
+**What not just use [`gulp-shell`](https://github.com/sun-zheng-an/gulp-shell)?**  
 `gulp-shell` is great, but sadly it uses [`child_process.exec`](https://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback). That means that output from the plugin is buffered and only output in chunks. This causes issues with command line applications that are expecting direct access to the console. (it also has a tendency to strip colors from the output). This uses [`child_process.spawn`](https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options) which is more difficult to use, but works much better.
 
 **Can you add this new feature?**  
