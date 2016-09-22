@@ -30,7 +30,7 @@ export default function run (command = [], options = {}) {
         if (typeof timeout !== 'undefined') promiseArray.push(promiseTimeout(parseInt(timeout, 10), timedOutSymbol))
 
         // Finally, await on a race between the promises to deal with the first of them
-        const promiseResult = Promise.race(promiseArray)
+        const promiseResult = await Promise.race(promiseArray)
 
         // If the promise resolves with timedOutSymbol first, then throw an error
         if (promiseResult === timedOutSymbol) {
