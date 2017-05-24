@@ -19,7 +19,7 @@ export default function run (command, optionsOrArgs = {}, options = {}) {
     // Wrap it in a try/catch to ignore errors if ignoreErrors is set
     try {
       // Run the command
-      return runCommand(cmd, quiet, pathResolve(cwd), env)
+      return runCommand(cmd, args, quiet, pathResolve(cwd), env)
     } catch (err) {
       // Unless ignoreErrors is true, re-throw the caught error
       if (!ignoreErrors) {
