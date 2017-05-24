@@ -1,6 +1,6 @@
 {
   "name": "gulp-run-command",
-  "version": "0.0.7",
+  "version": "0.0.8-beta.1",
   "description": "A simple way to run command-line programs from gulp in a cross-platform way.",
   "main": "index.es5.js",
   "scripts": {
