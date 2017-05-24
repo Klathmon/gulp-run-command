@@ -14,6 +14,8 @@ export default function run (command, optionsOrArgs = {}, options = {}) {
     env = {}
   } = (Array.isArray(optionsOrArgs) ? options : optionsOrArgs)
 
+  const args = (Array.isArray(optionsOrArgs) ? optionsOrArgs : [])
+
     // Wrap it in a try/catch to ignore errors if ignoreErrors is set
     try {
       // Run the command
@@ -27,12 +29,9 @@ export default function run (command, optionsOrArgs = {}, options = {}) {
   }
 }
 
-const runCommand = (command, quiet, cwd, env) => new Promise((resolve) => {
-  // Parse out the args from the command
-  const args = spawnArgs(command, { removequotes: 'always' })
-
+const runCommand = (command, args, quiet, cwd, env) => new Promise((resolve) => {
   // Run the command
-  const proc = spawn(args.shift(), args, {
+  const proc = spawn(command, args, {
     stdio: [
       'ignore', // ignore stdin
       (quiet ? 'ignore' : 'inherit'), // ignore or inherit stdout depending on quiet flag
