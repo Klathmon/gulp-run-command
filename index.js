@@ -25,7 +25,7 @@ export default function run (command = [], options = {}) {
       // Wrap it in a try/catch to ignore errors if ignoreErrors is set
       try {
         // Run the command and add the promise to the promise array
-        const promiseArray = [runCommand(cmd, quiet, pathResolve(cwd), env)]
+        const promiseArray = [runCommand(cmd, quiet,ignoreErrors, pathResolve(cwd), env)]
         // If timeout is set, then add that as a timebomb to the promise array
         if (typeof timeout !== 'undefined') promiseArray.push(promiseTimeout(parseInt(timeout, 10), timedOutSymbol))
 
@@ -46,7 +46,7 @@ export default function run (command = [], options = {}) {
   }
 }
 
-const runCommand = (command, quiet, cwd, env) => new Promise((resolve) => {
+const runCommand = (command, quiet,ignoreErrors, cwd, env) => new Promise((resolve) => {
   // Parse out the args from the command
   const args = spawnArgs(command, { removequotes: 'always' })
 
@@ -67,7 +67,13 @@ const runCommand = (command, quiet, cwd, env) => new Promise((resolve) => {
 
   // On error, throw the err back up the chain
   proc.on('error', (err) => {
-    throw err
+    if(!ignoreErrors){
+      throw err
+    }
+    else
+    {
+      resolve()
+    }
   })
 
   // On exit, check the exit code and if it's good, then resolve
@@ -75,7 +81,13 @@ const runCommand = (command, quiet, cwd, env) => new Promise((resolve) => {
     if (parseInt(code, 10) === 0) {
       resolve()
     } else {
-      throw new Error(`Non-zero exit code of "${code}"`)
+      if(!ignoreErrors){
+        throw new Error(`Non-zero exit code of "${code}"`)
+      }
+      else
+      {
+        resolve()
+      }
     }
   })
 })
