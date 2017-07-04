@@ -3,10 +3,11 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 A simple way to run command-line programs from gulp in a cross-platform way.
+Originally based on gulp-run-command v.0.0.7. This package is intended to be temporary.
 
 ## Installation
 
-`npm install gulp-run-command`
+`npm install gulp-run-command-barco`
 
 ## Usage
 ```js
