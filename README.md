@@ -77,6 +77,12 @@ I loved Gulp's dependency management and plugin ecosystem, but I hated having to
 **Can you add this new feature?**  
 Maybe... I'm trying to keep this a small single-purpose plugin, but if you want a feature feel free to open an issue and I'll take a look.
 
+**Gulp@4 support**  
+In order to use `gulp-run-command` with Gulp@4, you need to call the return function after passing the command and options (formally known as currying). For example:
+```javascript
+gulp.task('clean', async () => run('echo "Hello World!"')());
+```
+
 ## Inspiration
 
 * [`gulp-shell`](https://github.com/sun-zheng-an/gulp-shell) came up with the idea, I just changed it's underlying implementation.
