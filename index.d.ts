@@ -64,6 +64,6 @@ interface Options {
 *   env: { NODE_ENV: 'production' }
 * })); 
 */
-declare function run(command: string | string[], options: Options): () => Promise<void>;
+declare function run(command: string | string[], options?: Options): () => Promise<void>;
 
 export = run;
