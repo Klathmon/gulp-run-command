@@ -3,6 +3,7 @@
   "version": "0.0.9",
   "description": "A simple way to run command-line programs from gulp in a cross-platform way.",
   "main": "index.es5.js",
+  "types": "index.d.ts",
   "scripts": {
     "pub": "np patch",
     "postversion": "npm run build",
