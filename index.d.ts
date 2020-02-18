@@ -4,7 +4,7 @@ interface Options {
      * 
      * @default false
      */
-    quiet: boolean;
+    quiet?: boolean;
 
     /**
      * Setting to `true` will ignore any errors that the command throws. 
@@ -12,7 +12,7 @@ interface Options {
      * 
      * @default false
      */
-    ignoreErrors: boolean;
+    ignoreErrors?: boolean;
 
     /**
      * Sets the current working directory for the command.
@@ -21,14 +21,14 @@ interface Options {
      * @default `process.cwd()` 
      * @link http://nodejs.org/api/process.html#process_process_cwd
      */
-    cwd: string;
+    cwd?: string;
 
     /**
      * The max time(in milliseconds) that the command is allowed to run.
      * 
      * @default undefined (no timeout)
      */
-    timeout: number;
+    timeout?: number;
 
     /**
      * This object will be **added to** the normal environment, overwriting defaults with what you pass in.
@@ -37,7 +37,7 @@ interface Options {
      * 
      * @default {}
      */
-    env: object
+    env?: object
 }
 
 /**
