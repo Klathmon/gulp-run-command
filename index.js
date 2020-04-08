@@ -53,7 +53,7 @@ const runCommand = (command, quiet,ignoreErrors, cwd, env) => new Promise((resol
   // Run the command
   const proc = spawn(args.shift(), args, {
     stdio: [
-      'ignore', // ignore stdin
+      (quiet ? 'ignore' : 'inherit'), // ignore or inherit stderr depending on quiet flag
       (quiet ? 'ignore' : 'inherit'), // ignore or inherit stdout depending on quiet flag
       (quiet ? 'ignore' : 'inherit')  // ignore or inherit stderr depending on quiet flag
     ],
