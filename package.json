@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "babel-plugin-transform-runtime": "6.15.0",
-    "cross-spawn": "4.0.0",
+    "cross-spawn": "7.0.5",
     "spawn-args": "0.2.0",
     "timeout-as-promise": "^1.0.0"
   }
